@@ -33,8 +33,7 @@ def index():
     #print(type(rand_quote))
     #q = rand_quote.get("Quote")
     #s = rand_quote.get("Speaker")
-    #render_template('index.html', quote="q", speaker="s")
-    return "<h1>Welcome to our server !!</h1>"
+    return render_template('index.html', quote="q", speaker="s")
 
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
