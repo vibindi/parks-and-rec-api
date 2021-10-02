@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route('/a/', methods=['GET'])
 def respond():
     response = {}
-    response["Quote"] = f"Welcome {name} to our awesome platform!!"
+    response["Quote"] = "ALL QUOTES"
 
     # Return the response in json format
     return jsonify(response)
