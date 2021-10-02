@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
+import pandas as pd
 app = Flask(__name__)
 
 @app.route('/a/', methods=['GET'])
 def respond():
     response = {}
-    #data = pd.read_csv('data/quotes.csv')
-    #data = data.to_dict()
+    data = pd.read_csv('data/quotes.csv')
+    data = data.to_dict()
     response["Data"] = "data"
     response["Code"] = 200
 
