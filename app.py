@@ -33,8 +33,8 @@ def index():
     #print(type(rand_quote))
     #q = rand_quote.get("Quote")
     #s = rand_quote.get("Speaker")
-    return "<h1>HELLO WORLD!</h1>"#render_template('index.html', quote="q", speaker="s")
+    #render_template('index.html', quote="q", speaker="s")
+    return "<h1>Welcome to our server !!</h1>"
 
 if __name__ == '__main__':
-    # Threaded option to enable multiple instances for multiple user access support
     app.run(threaded=True, port=5000)
