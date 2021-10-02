@@ -10,7 +10,13 @@ def allQuotes():
     response = {}
     data = pd.read_csv('data/quotes.csv')
     data = data.to_dict()
-    response["Data"] = data
+    speakers = data.get("speaker")
+    quotes = data.get("quote")
+
+    # quotes data
+    qd = {speakers.get(i):quotes.get(i) for i in range(len(speakers))}
+
+    response["Quotes"] = qd
     response["Code"] = 200
     return jsonify(response)
 
