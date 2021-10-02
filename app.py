@@ -34,5 +34,9 @@ def index():
     s = rand_quote.get("Speaker")
     return render_template('index.html', quote=q, speaker=s)
 
+@app.route('/api')
+def api_info():
+    return render_template('api-info.html')
+
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
