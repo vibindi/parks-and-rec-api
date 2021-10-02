@@ -29,11 +29,11 @@ def randomQuote():
 
 @app.route('/')
 def index():
-    rand_quote = requests.get('https://parks-and-rec-quotes.herokuapp.com/r').json()
-    print(type(rand_quote))
-    q = rand_quote.get("Quote")
-    s = rand_quote.get("Speaker")
-    return render_template('index.html', quote=q, speaker=s)
+    #rand_quote = requests.get('https://parks-and-rec-quotes.herokuapp.com/r').json()
+    #print(type(rand_quote))
+    #q = rand_quote.get("Quote")
+    #s = rand_quote.get("Speaker")
+    return render_template('index.html', quote="q", speaker="s")
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
