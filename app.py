@@ -5,9 +5,9 @@ app = Flask(__name__)
 @app.route('/a/', methods=['GET'])
 def respond():
     response = {}
-    #data = pd.read_csv('data/quotes.csv')
-    #data = data.to_dict()
-    response["Data"] = "data"
+    data = pd.read_csv('data/quotes.csv')
+    data = data.to_dict()
+    response["Data"] = data
     response["Code"] = 200
 
     # Return the response in json format
