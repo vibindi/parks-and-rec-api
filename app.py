@@ -6,7 +6,7 @@ def respond():
     response = {}
     data = pd.read_csv('data/quotes.csv')
     data = data.to_dict()
-    response["Data"] = data
+    #response["Data"] = data
     response["Code"] = 200
 
     # Return the response in json format
