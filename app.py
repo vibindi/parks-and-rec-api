@@ -1,16 +1,27 @@
 from flask import Flask, request, jsonify
 import pandas as pd
+import random
 app = Flask(__name__)
 
 @app.route('/a/', methods=['GET'])
-def respond():
+def allQuotes():
     response = {}
     data = pd.read_csv('data/quotes.csv')
     data = data.to_dict()
     response["Data"] = data
     response["Code"] = 200
+    return jsonify(response)
 
-    # Return the response in json format
+@app.route('/r/', methods=['GET'])
+def randomQuote():
+    response = {}
+    data = pd.read_csv('data/quotes.csv')
+    data = data.to_dict()
+    speaker = data.get('speaker')
+    quote = data.get('quote')
+    response["Speaker"] = speaker
+    response["Quote"] = quote
+    response["Code"] = 200
     return jsonify(response)
 
 # A welcome message to test our server
